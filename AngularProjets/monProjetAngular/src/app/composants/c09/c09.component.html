@@ -1,2 +1,98 @@
-<p>c09 works!</p>
-hi boys!!!
+
+<div class="container">
+    <div class="row justify-content-cente">
+        <div class="col-4">
+            <ul>
+                <li>{{unString}}</li>
+                <li>{{unChiffre}}</li><br/>
+                <li>Nom {{unObjet.nom}}</li>
+                <li>Prénom {{unObjet.prenom}}</li>
+                <li>Ville {{unObjet.ville}}</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <hr>
+    <div class="row justify-content-cente">
+        <div class="col-3">
+            <button class="btn btn-primary"
+            (click)="unClic()">{{sBouton}}</button>
+        </div>
+        <div class="col-4">
+            <p *ngIf="nbClic%2 == 0">pair</p>
+            <p *ngIf="nbClic%2 != 0">impair</p>
+        </div>
+        <div class="col-4">
+            <p *ngIf="nbClic%2 == 0; then clicPair else clicImpair"></p>
+            <ng-template #clicPair>Nombre pair de clic</ng-template>
+            <ng-template #clicImpair>Nombre impair de clic</ng-template>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row justify-content-cente">
+        <div class="col-4">
+            <p *ngFor="let sportif of sportifs;
+                        index as i;
+                        first as f,
+                        last as l;
+                        odd as o;
+                        even as e">
+                        <strong>{{sportif}}</strong> son index: {{i}},<br>
+                        il est le premeir en liste: {{f}},<br>
+                        il est le dernier en liste: {{l}},<br>
+                        c'est un nombre pair: {{e}},<br>
+                        c'est un nombre impair: {{o}}
+            </p>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row justify-content-cente">
+        <div class="col-4">
+            <div *ngFor="let sportif of sportifs">
+                <div [ngSwitch]=sportif>
+                    <span *ngSwitchCase="'Laurence Cousin'">
+                        <strong>{{sportif}}</strong>
+                    </span>
+                    <span *ngSwitchDefault>{{sportif}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row justify-content-cente">
+        <div class="col-3">
+            <h4 [class]="maClasse">Utilisation de ngClass</h4>
+        </div>
+        <div class="col-4">
+            <button class="btn-primary"
+            (click)="changeClass()">change de classe</button>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row justify-content-cente">
+        <div class="col-3">
+            <h4 [class.alert-info]="unBooleen">Utilisation de ngClass booleen</h4>
+        </div>
+        <div class="col-4">
+            <button class="btn-primary"
+            (click)="changeClassBoolean()">change de classe</button>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row justify-content-cente">
+        <div class="col-3">
+            <h4 [ngClass]="unObjetClass">Utilisation de ngClass Objet</h4>
+        </div>
+        <div class="col-4">
+            <button class="btn-primary"
+            (click)="changeClassObjet()">change de classe</button>
+        </div>
+    </div>
+</div>
+

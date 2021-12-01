@@ -24,6 +24,14 @@ unObjetClass = {
   'badge-primary': true
   };
 
+  unStyle = 'green';
+  monStyle = {
+    'color': 'red',
+    'font-weight': 'bold'
+  }
+
+  // ###########################################################################
+
   constructor() { }
 
   ngOnInit(): void {
@@ -55,6 +63,11 @@ unObjetClass = {
     } else {
       this.unObjetClass.badge = true;
     }
+  }
+
+  fonctionStyle(){
+    console.log('style css');
+    return 'blue';
   }
 
 }

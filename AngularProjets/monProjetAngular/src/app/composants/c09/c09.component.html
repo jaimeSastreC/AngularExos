@@ -91,7 +91,35 @@
         </div>
         <div class="col-4">
             <button class="btn-primary"
-            (click)="changeClassObjet()">change de classe</button>
+            (click)="changeClassObjet()">change dans classe</button>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row justify-content-cente">
+        <div class="col-3">
+            <div [style.background-color]="'red'">
+                &nbsp;
+            </div>
+            <div [style.background-color]="fonctionStyle()">
+                xxxx
+            </div>
+        </div>
+        <div class="col-4">
+            <div [style.background-color]="unStyle">
+                &nbsp;
+            </div>
+            <div [style.color]="'red'" [style.font-weight]="'bold'">
+                Tahiti
+            </div>
+        </div>
+        <div class="col-3">
+            <div [style.background-color]="'red'">
+                &nbsp;
+            </div>
+            <div [ngStyle]="monStyle">
+                ngStyle
+            </div>
         </div>
     </div>
 </div>

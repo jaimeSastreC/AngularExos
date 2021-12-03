@@ -1,1 +1,35 @@
-<p>c10 works!</p>
+<div class="container text-center">
+    <h2>Le Composant 10</h2>
+    <div>les textes</div>
+    <div>{{replique}}</div>
+    <div>{{replique | lowercase}}</div>
+    <div>{{replique | uppercase}}</div>
+    <div>{{replique | titlecase}}</div><br>
+    <div>les Chiffres</div>
+    <div>pi : {{chiffrePi | number: '2.3-4'}}</div>
+    <div>un pourcentage : {{unChiffre | percent: '2.3-4'}}</div><br>
+    <div>Currency</div>
+    <div>Tesla au prix de: {{teslaM3 | currency: 'EUR' : 'symbol'}}</div>
+    <div>Tesla au prix de: {{teslaM3 | currency: 'EUR' : 'symbol' : '1.0-0'}}</div>
+    <div>Tesla au prix de: {{teslaM3 | currency: 'EUR' : 'code'}}</div>
+    <div>Tesla au prix de: {{teslaM3 | currency: 'EUR' : 'euros, un bon prix!'}}</div><br>
+    <div>les Dates</div>
+    <div>Nous sommes le {{aujourdhui}}</div>
+    <div>Nous sommes le {{aujourdhui | date}}</div>
+    <div>Nous sommes le {{aujourdhui | date : 'shortDate'}}</div>
+    <div>Il est {{aujourdhui | date : 'shortTime'}}</div>
+    <hr>
+    <h3>un Objet</h3>
+    <div *ngFor="let element of unObjet | keyvalue">
+        {{element.key}} - {{element.value}}
+    </div>
+    <h3>un dictionnaire</h3>
+    <div *ngFor="let elemDict of unDictionnaire | keyvalue">
+        {{elemDict.key}} - {{elemDict.value}}
+    </div>
+    <h3>un objet Json</h3>
+    <div>{{objetJson}}</div>
+    <div>{{objetJson | json}}</div>
+    <h3>asynchrone pipe</h3>
+    <div>{{objetPromesse | async}}</div>
+</div>

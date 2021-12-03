@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+// LOCALE_ID   POUR changer unités US vers FR
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -6,6 +7,12 @@ import { AppComponent } from './app.component';
 import { MpcComponent } from './composants/mpc/mpc.component';
 import { C09Component } from './composants/c09/c09.component';
 import { C10Component } from './composants/c10/c10.component';
+
+// locale ID
+import {registerLocaleData} from '@angular/common';
+import localeFR from '@angular/common/locales/fr';
+
+registerLocaleData(localeFR);
 
 @NgModule({
   declarations: [
@@ -18,7 +25,8 @@ import { C10Component } from './composants/c10/c10.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  // locale ID
+  providers: [{provide: LOCALE_ID, useValue: 'fr'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

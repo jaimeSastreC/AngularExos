@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="block"> 
+            <header class="title">
+                Générations de Pokemons:
+            </header>
+        <hr>
+        <div class="menu">
+            <p class="menu-label uppercase is-4">les différentes générations:</p>
+
+            <ul class="menu-list" *ngFor="let generation of generations">
+                <li><a href="#">{{generation}}</a></li>
+            </ul>
+        </div>
+    </div> 
+</div>

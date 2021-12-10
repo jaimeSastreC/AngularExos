@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "09476ce1-975f-4192-bef2-fd16212bf995"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -31,7 +34,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bulma/css/bulma.min.css"
             ],
             "scripts": []
           },

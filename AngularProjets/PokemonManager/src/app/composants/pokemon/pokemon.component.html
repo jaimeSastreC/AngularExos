@@ -1,0 +1,11 @@
+<div class="box is-primary subtitle">
+    <div class="content menu-list">
+        <img src="{{parametre.img}}" />
+        <header class='subtitle is-4'><a href="#"><u>{{parametre.nom }}</u></a></header>
+        <p>catégorie: <span *ngIf="parametre.categorie; else na">{{parametre.categorie}}</span></p>
+        <p>type: <span *ngIf="parametre.type; else na">{{parametre.type}}</span></p>
+        <p>taille: <span *ngIf="parametre.taille; else na">{{parametre.taille | number: '1.2-2'}} m</span></p>
+        <p>poids: <span *ngIf="parametre.poids; else na">{{parametre.poids | number: '1.2-2'}} kg</span></p>
+        <ng-template #na>N/A</ng-template>
+    </div>
+</div>

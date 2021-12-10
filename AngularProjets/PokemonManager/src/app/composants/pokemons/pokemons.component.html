@@ -1,0 +1,29 @@
+<br>
+<div class="container">
+    <div class="columns">
+        <div class="column">
+            <div class="box notification ">
+                <header><h1 class="title">Les six premiers Pokémons:</h1></header>
+                <p class="subtitle">Dans l'ordre du Pokédex : </p>
+            </div>
+        </div>
+    </div>
+    <div class="columns is-8-desktop is-multiline">
+
+        <div class="column is-one-third" *ngFor="let pokemon of pokemons" >
+            <app-pokemon [parametre]="pokemon"></app-pokemon>
+            <!-- <div class="box is-primary subtitle">
+                <div class="content menu-list">
+                    <img src="{{pokemon.img}}" />
+                    <header class='subtitle is-4'><a href="#"><u>{{pokemon.nom }}</u></a></header>
+                    <p>catégorie: <span *ngIf="pokemon.categorie; else na">{{pokemon.categorie}}</span></p>
+                    <p>type: <span *ngIf="pokemon.type; else na">{{pokemon.type}}</span></p>
+                    <p>taille: <span *ngIf="pokemon.taille; else na">{{pokemon.taille | number: '1.2-2'}} m</span></p>
+                    <p>poids: <span *ngIf="pokemon.poids; else na">{{pokemon.poids | number: '1.2-2'}} kg</span></p>
+                    <ng-template #na>N/A</ng-template>
+                </div>
+            </div> -->
+        </div>
+
+    </div>
+</div>

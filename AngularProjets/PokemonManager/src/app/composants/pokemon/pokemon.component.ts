@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-pokemon',
@@ -6,6 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./pokemon.component.scss']
 })
 export class PokemonComponent implements OnInit {
+  // id:number= 0;
 
   @Input() parametre = {
     'id': 1, 'nom': 'Bulbizarre', 'img':
@@ -13,9 +14,16 @@ export class PokemonComponent implements OnInit {
         'categorie': 'graine', 'type': ['plante', 'poison'], 'taille': 0.70, 'poids': 6.9
   }
 
+  @Output() unEvent = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onPokemon(id:number){
+    this.unEvent.emit(id);
+    console.log(id);
   }
 
 }

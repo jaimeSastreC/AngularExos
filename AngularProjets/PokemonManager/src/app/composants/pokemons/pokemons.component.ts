@@ -50,6 +50,8 @@ export class PokemonsComponent implements OnInit {
     }
   ];
 
+  messageFils:number = 0;
+
   constructor() { }
 
   ngOnInit(): void {

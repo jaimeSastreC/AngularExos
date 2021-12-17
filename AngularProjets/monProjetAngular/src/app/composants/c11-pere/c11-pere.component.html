@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col text-center">
+            <h1 class="h3">Dark Vador: Je suis ton père</h1>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <app-c11-fils></app-c11-fils>
+            <app-c11-fils parametre="Leila"></app-c11-fils>
+            <app-c11-fils parametre="Yoda"></app-c11-fils>
+            <app-c11-fils parametre="Chewbacca"></app-c11-fils>
+        </div>
+    </div>
+    
+    <div class="row align-items-center">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <app-c11-fils [parametre]="personnage"></app-c11-fils>
+        </div>
+    </div>
+
+    <div class="row align-items-center">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <app-c11-fils [personne]="personnage2"></app-c11-fils>
+        </div>
+    </div>
+    <div>
+        Message du fils: {{messageDuFils}} <br>
+        <app-c11-fils (unEvenement)="messageDuFils=$event"></app-c11-fils>
+    </div>
+
+</div>

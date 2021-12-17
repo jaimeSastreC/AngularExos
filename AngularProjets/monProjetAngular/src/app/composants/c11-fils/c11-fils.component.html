@@ -1,0 +1,8 @@
+<p>{{parametre}}: Noooooooooooon!!!</p>
+<div *ngIf="personne.nom != 'Doe'" >
+    <h5>variable de Component père vers fils</h5>
+    <p>{{personne.nom}} {{personne.prenom}}</p>
+</div>
+<div>
+    <button class="btn btn-info" (click)="unClicBouton()">unBouton</button>
+</div>

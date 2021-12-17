@@ -11,6 +11,10 @@ import { C10Component } from './composants/c10/c10.component';
 // locale ID
 import {registerLocaleData} from '@angular/common';
 import localeFR from '@angular/common/locales/fr';
+import { C11PereComponent } from './composants/c11-pere/c11-pere.component';
+import { C11FilsComponent } from './composants/c11-fils/c11-fils.component';
+import { C1201Component } from './composants/c1201/c1201.component';
+import { C1202Component } from './composants/c1202/c1202.component';
 
 registerLocaleData(localeFR);
 
@@ -19,7 +23,11 @@ registerLocaleData(localeFR);
     AppComponent,
     MpcComponent,
     C09Component,
-    C10Component
+    C10Component,
+    C11PereComponent,
+    C11FilsComponent,
+    C1201Component,
+    C1202Component
   ],
   imports: [
     BrowserModule,

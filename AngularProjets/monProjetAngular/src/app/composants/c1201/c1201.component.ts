@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // attention, pour service général placer dans app.component et pour utilisation par autre service dans app.module.ts
 import { C12Service } from 'src/app/services/c12.service';
 import { C1202Component } from '../c1202/c1202.component';
+import { CrudService } from 'src/app/services/crud.service';
 
 
 
@@ -15,7 +16,9 @@ export class C1201Component implements OnInit {
   text:string;
   message:string = '';
 
-  constructor(private uneDependance: C1202Component, private unService: C12Service) { }
+  citations = [];
+
+  constructor(private uneDependance: C1202Component, private unService: C12Service, private crud:CrudService) { }
 
 
   ngOnInit(): void {
@@ -26,4 +29,13 @@ export class C1201Component implements OnInit {
     this.message = this.unService.tennis();
   }
 
+  //*****************************
+  affiche() {
+    this.citations = this.crud.getCitations();
+  }
+
+  supprime(index) {
+    this.citations = this.crud.deleteCitation(index);
+  }
+ 
 }

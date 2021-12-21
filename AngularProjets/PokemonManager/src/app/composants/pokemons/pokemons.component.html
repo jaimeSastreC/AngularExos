@@ -4,23 +4,23 @@
         <div class="column">
             <div class="box notification ">
                 <header>
-                    <h1 class="title">Les six premiers Pokémons:</h1>
+                    <h1 class="title">Les {{comptage}} premiers Pokémons:</h1>
                     <h3 class="subtitle">Dans l'ordre du Pokedex: </h3>
-                    <p *ngIf="messageFils!=0">pokemon choisi: {{pokemons[messageFils-1].nom}}</p>
+                    <p *ngIf="messageFils!=0">pokemon choisi: {{getPokemonName(messageFils)}}</p>
                 </header>
             </div>
         </div>
     </div>
     <div class="columns is-8-desktop is-multiline">
-
+    
         <div class="column is-one-third" *ngFor="let pokemon of pokemons">
-            <app-pokemon [parametre]="pokemon" (unEvent)="messageFils=$event">{{messageFils}}</app-pokemon>
+            <app-pokemon [parametre]="pokemon" (unEvent)="messageFils=$event"></app-pokemon>
         </div>
 
     </div>
     <div class="column"><p class="subtitle">Pokemon choisi: </p></div>
     <div class="column is-one-third" *ngFor="let pokemon of pokemons">
-        <app-pokemon *ngIf="pokemon.id===messageFils" [parametre]="pokemon">{{messageFils}}</app-pokemon>
+        <app-pokemon *ngIf="pokemon.id===messageFils" [parametre]="pokemon"></app-pokemon>
     </div>
 </div>
             <!-- module pokemon déplacé vers pokemon.html  -->

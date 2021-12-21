@@ -6,13 +6,14 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
   styleUrls: ['./pokemon.component.scss']
 })
 export class PokemonComponent implements OnInit {
-  // id:number= 0;
 
-  @Input() parametre = {
+  // check type parametre
+  @Input() parametre: any = {
     'id': 1, 'nom': 'Bulbizarre', 'img':
         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png ', 
         'categorie': 'graine', 'type': ['plante', 'poison'], 'taille': 0.70, 'poids': 6.9
   }
+
 
   @Output() unEvent = new EventEmitter();
 

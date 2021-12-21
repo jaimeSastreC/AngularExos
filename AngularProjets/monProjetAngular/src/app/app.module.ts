@@ -17,6 +17,8 @@ import { C1201Component } from './composants/c1201/c1201.component';
 import { C1202Component } from './composants/c1202/c1202.component';
 import { CrudService } from './services/crud.service';
 import { C12Service } from './services/c12.service';
+import { C13Component } from './composants/c13/c13.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 registerLocaleData(localeFR);
 
@@ -29,11 +31,14 @@ registerLocaleData(localeFR);
     C11PereComponent,
     C11FilsComponent,
     C1201Component,
-    C1202Component
+    C1202Component,
+    C13Component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   // locale ID
   providers: [

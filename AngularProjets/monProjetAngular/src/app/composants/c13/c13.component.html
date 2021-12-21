@@ -1,0 +1,90 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6 ">
+            <header>
+                <h2>Le composant c13</h2>
+            </header><br>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-8">
+
+            <hr>
+            <h3>par Gabarit</h3>
+            <p>
+                Valeurs #Formulaire :&nbsp; {{monFormulaire.value | json}}
+                <br><hr>
+                Valeurs ngModel:&nbsp; {{formulaire | json}} <br>
+                valeurs individuelles: <span *ngIf="formulaire.nom && formulaire.majeur">{{formulaire.nom}} {{formulaire.couleur}} {{formulaire.majeur}}</span>
+            </p>
+            <hr>
+
+            <body>
+
+                <form action="" method="post" #monFormulaire="ngForm">
+                    <div class="form-group">
+                        <label for="nom">Nom:&nbsp; </label>
+                        <input type="text" id="nom" name="nom" class="form-group" [(ngModel)]="formulaire.nom" >
+                    </div>
+                    <div class="form-group">
+                        <label for="couleur">Couleur: </label>
+                        <select class="form-control" id="couleur" name="couleur" [(ngModel)]="formulaire.couleur">
+                            <option selected>Blanc</option>
+                            <option>Bleu</option>
+                            <option>Noir</option>
+                            <option>Rouge</option>
+                            <option>Vert</option>
+                        </select>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="majeur" name="majeur" [(ngModel)]="formulaire.majeur">
+                        <label for="majeur" class="form-check-label">Je suis majeur</label>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Envoyer</button>
+                </form>
+
+            </body>
+        </div>
+    </div>
+<hr>
+<hr>
+    <div class="row justify-content-center">
+        <div class="col-8">
+
+            <hr>
+            <h3>dans classe Typescript</h3>
+            <p>
+                Valeurs #Formulaire :&nbsp; {{monFormulaireT.value | json}}
+                <br><hr>
+            </p>
+            <hr>
+
+            <body>
+
+                <form [formGroup]="monFormulaireT" 
+                        (ngSubmit)="onClick(monFormulaireT.value)">
+                    <div class="form-group">
+                        <label for="nom">Nom:&nbsp; </label>
+                        <input type="text" id="nom" name="nom" class="form-group" formControlName="nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="couleur">Couleur: </label>
+                        <select class="form-control" id="couleur" name="couleur" formControlName="couleur">
+                            <option selected>Blanc</option>
+                            <option>Bleu</option>
+                            <option>Noir</option>
+                            <option>Rouge</option>
+                            <option>Vert</option>
+                        </select>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="majeur" name="majeur" formControlName="majeur">
+                        <label for="majeur" class="form-check-label">Je suis majeur</label>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Envoyer</button>
+                </form>
+
+            </body>
+        </div>
+    </div>
+</div>

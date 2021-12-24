@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonService } from 'src/app/services/pokemon.service';
+import { PokemonsService } from 'src/app/services/pokemons.service';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faOptinMonster } from '@fortawesome/free-brands-svg-icons';
+import { FormRecherchePokemon } from 'src/app/modeles/form-recherche-pokemon';
 
 @Component({
   selector: 'app-pokemons',
@@ -23,7 +26,13 @@ export class PokemonsComponent implements OnInit {
 
   comptage:number = 0;
 
-  constructor(private pokemonsService:PokemonService) {
+  faCoffee = faCoffee;
+
+  faOptinMonster = faOptinMonster;
+
+  formRecherchePokemon = new FormRecherchePokemon(' ');
+
+  constructor(private pokemonsService:PokemonsService) {
    }
 
   ngOnInit(): void {
@@ -48,5 +57,16 @@ export class PokemonsComponent implements OnInit {
       }
     );
     return pokemon.nom;
+  }
+
+  rechercher(nomPokemon:string) {
+    this.pokemons = this.pokemonsService.rechercherPokemon(nomPokemon);
+    console.log(this.pokemons);
+    console.log(nomPokemon);
+  }
+
+  annulerRecherche() {
+    this.pokemons = this.pokemonsService.getPokemons();
+    this.formRecherchePokemon.setNom('');
   }
 }

@@ -22,8 +22,37 @@
     <div class="column is-one-third" *ngFor="let pokemon of pokemons">
         <app-pokemon *ngIf="pokemon.id===messageFils" [parametre]="pokemon"></app-pokemon>
     </div>
+    <!-- ******************************************* -->
+    <div class="columns">
+        <div class="column is-two-third">
+            <form action="" #nomFormulaire="ngForm">
+                <div class="field has-addons">
+                    <div class="control has-icons-left">
+                        <input type="text" class="input is-small"
+                        name="pokemonRecherche"
+                        type="text"
+                        placeholder="Nom du Pokemon"
+                        [(ngModel)]="formRecherchePokemon.nom"
+                        (keyup)="rechercher(formRecherchePokemon.nom)">
+                        <span class="icon is-small is-left">
+                            <fa-icon [icon]="faOptinMonster"></fa-icon>
+                        </span>
+                    </div>
+                </div>
+                <div class="control">
+                    <a class="button is-primary is-small"
+                    (click)="rechercher(formRecherchePokemon.nom)">Rechercher</a>
+                </div>
+                <div class="control">
+                    <a class="button is-light is-small"
+                    (click)="annulerRecherche()">Annuler</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
 </div>
-            <!-- module pokemon déplacé vers pokemon.html  -->
+  <!-- module pokemon déplacé vers pokemon.html  -->
             <!-- <div class="box is-primary subtitle">
                 <div class="content menu-list">
                     <img src="{{pokemon.img}}" />

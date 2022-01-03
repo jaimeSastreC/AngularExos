@@ -1,9 +1,9 @@
 export class FormRecherchePokemon {
 
-    nom: string;
+    // nom: string;
 
-    constructor(nom:string) {
-        this.nom = nom
+    constructor(public nom:string) {
+        // this.setNom(nom);
     }
 
     setNom(nom:string) {

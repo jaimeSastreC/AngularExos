@@ -40,7 +40,7 @@ export class PokemonsComponent implements OnInit {
     this.comptage = this.pokemonsService.nombrePokemons();
   }
 
-  // getPokemonName(id:number) {
+  // getPokemonName(id:number):string {
   //   const pokemonName:string = 'not defined';
   //   for (let pokemon of this.pokemons){
   //     if(pokemon.id === id) {
@@ -50,7 +50,7 @@ export class PokemonsComponent implements OnInit {
   //   return pokemonName;
   // }
 
-  getPokemonName(id:number) {
+  getPokemonName(id:number):number {
     const pokemon = this.pokemons.find(
       (pokemonObject:any) => {
         return pokemonObject.id === id;
@@ -59,13 +59,13 @@ export class PokemonsComponent implements OnInit {
     return pokemon.nom;
   }
 
-  rechercher(nomPokemon:string) {
+  rechercher(nomPokemon:string):void {
     this.pokemons = this.pokemonsService.rechercherPokemon(nomPokemon);
     console.log(this.pokemons);
-    console.log(nomPokemon);
+    //console.log(nomPokemon);
   }
 
-  annulerRecherche() {
+  annulerRecherche():void {
     this.pokemons = this.pokemonsService.getPokemons();
     this.formRecherchePokemon.setNom('');
   }

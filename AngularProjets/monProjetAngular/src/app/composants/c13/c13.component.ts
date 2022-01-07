@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MonFormulaire } from 'src/app/modeles/mon-formulaire';
 
 @Component({
@@ -19,19 +19,19 @@ export class C13Component implements OnInit {
     majeur: new FormControl (false)
   });
 
-  // Todo : option : utiliser FormBuilder => à vérifier!
-  // monFormulaireGroup = this.formulaire.group({
-  //   nom: [' '],
-  //   couleur: [' '],
-  //   majeur: [false]
-  // });
+  // Todo : option : utiliser formulaireG:FormBuilder => voir exemple dans doc Angular pour groupes: ex group (nom, prénom)!
+  monFormulaireGroup = this.formulaireG.group({
+    nom: [' '],
+    couleur: [' '],
+    majeur: [false]
+  });
 
-  constructor() { }
+  constructor(private formulaireG:FormBuilder) { }
 
   ngOnInit(): void {
   }
 
-  onClick(donnees) {
+  onClick(donnees:MonFormulaire) {
     console.log(donnees);
   }
 

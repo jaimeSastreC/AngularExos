@@ -20,6 +20,12 @@ import { C12Service } from './services/c12.service';
 import { C13Component } from './composants/c13/c13.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { C14Component } from './composants/c14/c14.component';
+import { C15Component } from './composants/c15/c15.component';
+import { C15detailsComponent } from './composants/c15details/c15details.component';
+import { C15CComponent } from './composants/c15-c/c15-c.component';
+import { C15RComponent } from './composants/c15-r/c15-r.component';
+import { C15UComponent } from './composants/c15-u/c15-u.component';
+import { C15DComponent } from './composants/c15-d/c15-d.component';
 
 registerLocaleData(localeFR);
 
@@ -34,7 +40,13 @@ registerLocaleData(localeFR);
     C1201Component,
     C1202Component,
     C13Component,
-    C14Component
+    C14Component,
+    C15Component,
+    C15detailsComponent,
+    C15CComponent,
+    C15RComponent,
+    C15UComponent,
+    C15DComponent
   ],
   imports: [
     BrowserModule,

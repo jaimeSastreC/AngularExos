@@ -27,6 +27,7 @@ import { C15RComponent } from './composants/c15-r/c15-r.component';
 import { C15UComponent } from './composants/c15-u/c15-u.component';
 import { C15DComponent } from './composants/c15-d/c15-d.component';
 
+
 registerLocaleData(localeFR);
 
 @NgModule({

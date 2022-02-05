@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class C12Service {
 
@@ -15,7 +15,7 @@ export class C12Service {
     this.bon = !this.bon;
     if (this.bon){
       return 'ace';
-    }else{
+    } else {
       return 'out';
     }
   }

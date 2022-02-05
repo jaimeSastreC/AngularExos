@@ -1,1 +1,12 @@
-<p>c15 works!</p>
+<div>
+    <h3>Navigation dans Gabarit</h3>
+    <ul *ngFor="let techno of technologies">
+        <li><a [routerLink]="['/technos', techno.id]">{{techno.id}} - {{techno.nom}}</a></li>
+    </ul>
+</div>
+<div>
+    <h3>Navigation dans component Typescript</h3>
+    <ul *ngFor="let techno of technologies">
+        <li><a (click)="onClickSurTechno(techno)">{{techno.id}} - {{techno.nom}}</a></li>
+    </ul>
+</div>

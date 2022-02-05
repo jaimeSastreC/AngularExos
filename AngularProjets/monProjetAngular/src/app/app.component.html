@@ -3,5 +3,37 @@
 <!-- <app-c11-pere></app-c11-pere> -->
 <!-- <app-c1201></app-c1201> -->
 <!-- <app-c13></app-c13> -->
-<app-c14></app-c14>
+<!-- <app-c14></app-c14> -->
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light ps-5">
+    <a class="navbar-brand" [routerLink]="''">home</a>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/c9">C09</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/c10">C10</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/c11">C11</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/c1201">C12</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/c13">C13</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/c14">C14</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " routerLink="/c15">C15</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<br>
+<router-outlet></router-outlet>
